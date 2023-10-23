@@ -1,0 +1,23 @@
+html {overflow-y: auto;}
+body{ background: transparent;}
+div { background-color: white; border-radius: 30px;}
+h1 { margin-left: 50px;}
+img {padding: 10px;}
+
+.example::-webkit-scrollbar { display: none; }
+.table {
+    margin-top: 100px;
+    height: 600px;
+    overflow: auto;
+    border-top: solid purple;
+    border-bottom: solid purple;
+}
+.fix {
+    position: fixed;
+    top: 5px;
+    border-bottom: solid purple;
+    width: 99.1%;
+}
+.shadows{
+    box-shadow: 5px 5px 5px 2px purple;;
+}

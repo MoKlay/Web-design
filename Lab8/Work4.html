@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #info{
+                width: 50px; 
+                height: 250px;
+                border: 1px solid black;
+                border-radius: 10px;
+                text-align: center;
+            }
+            h6{
+                font-size: larger;
+                padding: 0;
+                margin: 0;
+            }
+        </style>
+        <title>Рандомное число</title>
+    </head>
+    <body>
+        <div id="info"></div>
+        <script>
+            let info = document.getElementById('info');
+            let random = parseInt(Math.random() * 100);
+            let past = 0
+            const N = 10
+            for (var i = 0; i < N; i++) {
+                let cin = prompt('Попыток:' + parseFloat(N-i) + '\nУгадай случайное число от 0 до 100:', past, "dsd")
+                if (cin == null) {
+                    break;
+                }
+                cin = parseInt(cin);
+                if (cin >= 0 && cin <= 100) {
+                    if (isNaN(cin)) {
+                        alert('Ошибка!!!')
+                        i--;
+                    }
+                    else if (cin == random) {
+                        alert("Вы угадали!!!!!");
+                        info.innerHTML += "<h6>" + cin + "</h6>"
+                        break;
+                    } 
+                    else {
+                        if (i != N - 1) {
+                            alert("Не угадали.\nПопробуйте снова :)")
+                            if(cin > random) {
+                                alert("Загаданное число меньше чем введенное.")
+                            } else {
+                                alert("Загаданное число больше чем введенное.")
+                            }
+                        } else {
+                            alert("Не угадали.\nЗагаданное число было: " + random)
+                        }info.innerHTML += "<h6>" + cin + "</h6>"
+                    }
+                    past = cin;
+                } else {
+                    alert('Выход из диапазона!!!!!!!!')
+                    i--
+                }
+            }
+        </script>
+    </body>
+</html>

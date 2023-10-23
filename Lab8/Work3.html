@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                display: flex;
+                justify-content: center;
+            }
+            #h {
+                min-height: 200px;
+                min-width: 200px;
+                border-radius: 20px;
+                transition: height 0.5s, width 0.5s;
+            }
+            a{
+                text-decoration: none;
+                color: black;
+            }
+            button{
+                margin: 10px;
+                height: 20px;
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="text-align: center;">
+            <button onclick="randombox()">Обновить</button>
+            <div id="h"></div>
+        </div>
+        
+        <script>
+            function randombox() {
+                let h = parseInt(Math.random() * 500)
+                let w = parseInt(Math.random() * 500)
+                let r = Math.random() * 251
+                let g = Math.random() * 251
+                let b = Math.random() * 251
+                let el = document.getElementById('h')
+                el.style.width = w + "px"
+                el.style.height = h + "px"
+                el.style.backgroundColor = 'rgb('+ r + ',' + g + ',' + b + ')'
+            }
+            randombox()
+        </script>
+        
+    </body>
+</html>

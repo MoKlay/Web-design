@@ -1,0 +1,182 @@
+body {
+    margin: 0;
+}
+body.work1{
+    overflow: hidden;
+}
+.work1>div{
+    text-align: center;
+    height: 10vh;
+    border-bottom: 2px solid white;
+}
+.work1>div>h1{
+    display: inline;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    vertical-align: middle;
+}
+.work1>div:nth-child(1){
+    background: linear-gradient(red, blue);
+}
+.work1>div:nth-child(1)::before{
+    content: "✿ ";
+}
+.work1>div:nth-child(1)::after{
+    content: " ✿";
+}
+.work1>div:nth-child(2){
+    background: linear-gradient(blue, green);
+}
+.work1>div:nth-child(3){
+    background: linear-gradient(green, yellow);
+}
+.work1>div:nth-child(4){
+    background: linear-gradient(yellow, purple);
+}
+.work1>div:nth-child(5){
+    background: linear-gradient(purple, red);
+}
+.work1>div:nth-child(6){
+    background: linear-gradient(red, blue);
+}
+.work1>div:nth-child(7){
+    background: linear-gradient(blue, green);
+}
+.work1>div:nth-child(8){
+    background: linear-gradient(green, yellow);
+}
+.work1>div:nth-child(9){
+    background: linear-gradient(yellow, purple);
+}
+.work1>div:nth-child(10){
+    background: linear-gradient(purple, red);
+}
+.work1>div::first-letter{
+    color: blue;
+}
+
+body.work2{
+    --font-size-start: 0px;
+    --font-size-size: 10px;
+    --font-size-color: 15px;
+    --font-size-position: 20px;
+    text-align: center;
+}
+.work2>div{
+    font-size: var(--font-size-start);
+    position: absolute;
+    background-color: aqua;
+    height: 400px;
+    width: 400px;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 2s;
+}
+.work2>#color:active~div{
+    color: white;
+    font-size: var(--font-size-color);
+    background-color: black;
+}
+.work2>#size:active~div{
+    padding: 20px;
+    font-size: var(--font-size-size);
+    height: 300px;
+    width: 300px;
+    border-radius: 20px;
+}
+.work2>#position:active~div{
+    font-size: var(--font-size-position);
+    top: 200px;
+}
+
+.work3{margin: 20px;}
+.work3>.tub{
+    z-index: 3;
+    position: absolute;
+    width: 100px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: aliceblue;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.work3>.tub:active~.list,
+.work3>.list:hover{
+    z-index: 4;
+    height: 110px;
+    border-top: 0;
+}
+.work3>.list{
+    color: aliceblue;
+    padding-top: 28px;
+    z-index: 2;
+    border: 1px solid aliceblue;
+    text-align: center;
+    overflow: hidden;
+    position: absolute;
+    margin: 0;
+    width: 100px;
+    height: 0px;
+    transition: .1s;
+    border-radius: 10px;
+
+}
+
+.work3>.list>.button{
+    margin-top: 3px;
+    padding-top: 5px;
+    width: 100%;
+}
+.work3>.list>.button:hover{
+    color: black;
+    background-color: aliceblue;
+}
+
+.work4{
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.work4>.form{
+    background: url("bg.png") no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 800px;
+    height: 800px;
+    position: relative;
+    animation: Orbit 10s linear infinite;
+}
+.work4>.form>div{
+    height: 200px;
+    width: 200px;
+    margin: 0;
+    border: 1px solid black;
+    animation: Orbita 10s linear infinite;
+}
+@keyframes Orbita {
+    0% {
+        background-color: aquamarine;
+        transform: rotate(0deg) translateX(250px) rotate(0deg);
+        border-radius: 0;
+    }
+    50% {
+        background-color: blue;
+        border-radius: 200px;
+    }
+    100% {
+        transform: rotate(720deg) translateX(250px) rotate(-720deg);
+        background-color: aquamarine;
+    }
+}
+@keyframes Orbit {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}

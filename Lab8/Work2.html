@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function imagesbox() {
+                let img = ['bg1.jpg', 'bg2.jpg', 'bg3.jpg', 'bg4.jpg']
+                let choice = prompt('Выбор картинки:')
+                if(choice)
+                if(choice) {
+                    document.getElementById('img').setAttribute('src', "images/" + img[parseInt(choice)-1])
+                } else return false
+            }
+        </script>
+        <style>
+            body{
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                height: 100vh;
+            }
+            body::-webkit-scrollbar{display: none;}
+            img{border-radius: 40px;}
+            button{position: absolute; bottom: 10px; left: 50px;}
+        </style>
+    </head>
+    <body>
+        <img id="img">
+        <script>imagesbox()</script>
+        <button onclick="imagesbox()">Выбор картинки</button>
+    </body>
+</html>
