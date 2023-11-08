@@ -7,8 +7,8 @@
     <body>
         <script>
             let page = ['page1.html', 'page2.html', 'page3.html', 'page4.html']
-            let randomNumber = parseInt(Math.random() * 5)
-            document.body.innerHTML = "<a href='Pages/page" + parseFloat(randomNumber) + ".html'>Рандомная страница</a>"
+            let randomNumber = parseInt(Math.random() * 4)
+            document.body.innerHTML = "<a href='Pages/" + page[randomNumber] + "'>Рандомная страница</a>"
         </script>
     </body>
 </html>

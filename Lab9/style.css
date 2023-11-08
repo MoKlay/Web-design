@@ -1,0 +1,10 @@
+.red {
+    background-color: red;
+    border: 2px solid black;
+}
+
+.blue {
+    background-color: blue;
+    border: 2px solid black;
+    display: inline-block;
+}

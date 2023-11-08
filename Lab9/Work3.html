@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let f1, f2
+        if(confirm("Отобразить данные в виде синих блоков?"))
+            f1 = 'fblue'
+        else 
+            f1 = 'fred'
+        if(confirm("Отобразить данные в виде списка?")) {
+            f2 = "flist"
+        }
+        else
+            f2 = 'fstr'
+        let arr = read_data()
+        if (f2 == 'fstr') arr = fstr(arr)
+        else arr = flist(arr)
+        if (f1 == 'fblue') arr = fblue(arr)
+        else arr = fred(arr)
+
+        document.body.innerHTML = arr;
+    </script>
+</body>
+</html>
